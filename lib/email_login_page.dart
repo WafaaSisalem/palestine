@@ -14,7 +14,6 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String countryName = '';
-
   String countryFlag = '';
 
   @override
@@ -26,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
           width: double.infinity,
           child: Image.asset('assets/images/2.png'),
         ),
-        SizedBox(height: 85),
+        const SizedBox(height: 85),
         Container(width: 275, height: 51, color: Colors.black),
-        SizedBox(height: 78),
+        const SizedBox(height: 78),
         //if email
         // CustomTextFormField(
         //   hintText: 'Email',
@@ -36,36 +35,10 @@ class _LoginPageState extends State<LoginPage> {
 
         //if email and country
         CustomTextFormField(hintText: 'Name'),
-        SizedBox(
-          height: 12,
-        ),
-        Container(
-          width: 296,
-          height: 44,
-          decoration: buildBorderStyle(),
-          child: Row(
-            children: [
-              SizedBox(
-                width: 13,
-              ),
-              CircleAvatar(
-                radius: 11,
-                child: Text(countryFlag),
-              ),
-              Text(countryName)
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 12,
-        ),
-        CustomTextFormField(hintText: 'Email'),
-        SizedBox(
-          height: 24,
-        ),
-        CustomElevatedButton(
-          btnName: 'login', //if email and country let's go instead of login
-          onPressed: () {
+        const SizedBox(height: 12),
+        GestureDetector(
+          onTap: () {
+            //TODO: SHOW THE DROPMENU
             showCountryPicker(
               context: context,
               showPhoneCode:
@@ -73,9 +46,41 @@ class _LoginPageState extends State<LoginPage> {
               onSelect: (Country country) {
                 countryName = country.displayNameNoCountryCode;
                 countryFlag = country.flagEmoji;
+                setState(() {});
               },
             );
-            setState(() {});
+          },
+          child: Container(
+            width: 296,
+            height: 44,
+            decoration: buildBorderStyle(),
+            child: Row(
+              children: [
+                const SizedBox(
+                  width: 13,
+                ),
+                Text(countryFlag),
+                countryName.isEmpty
+                    ? const Text('Country Name',
+                        style: TextStyle(
+                            color: ColorHelper.black33, fontSize: 18.0))
+                    : Text(countryName, style: const TextStyle(fontSize: 18))
+              ],
+            ),
+          ),
+        ),
+
+        const SizedBox(
+          height: 12,
+        ),
+        CustomTextFormField(hintText: 'Email'),
+        const SizedBox(
+          height: 24,
+        ),
+        CustomElevatedButton(
+          btnName: 'login', //if email and country let's go instead of login
+          onPressed: () {
+            //TODO: LOGIN
           },
           width: 296,
           fontsize: 20,
@@ -84,13 +89,15 @@ class _LoginPageState extends State<LoginPage> {
             child: Directionality(
           textDirection: TextDirection.rtl,
           child: TextButton.icon(
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back,
               size: 19,
               color: ColorHelper.grey9F,
             ),
-            onPressed: () {},
-            label: Text(
+            onPressed: () {
+              //TODO: What happens when I press the SKIP button
+            },
+            label: const Text(
               'Skip',
               style: TextStyle(color: ColorHelper.greyA0, fontSize: 16),
             ),

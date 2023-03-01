@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:palestine/calendar.dart';
 
+import 'calendartable.dart';
 import 'email_login_page.dart';
 
 void main() {
@@ -17,11 +19,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginPage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(
+          title: 'dfl',
+        ));
   }
 }

@@ -12,4 +12,5 @@ class ColorHelper {
   static const brown7C = Color(0xFF7C5D5D);
   static const green64 = Color(0xFF64B3BE);
   static const black80 = Color(0x80000000);
+  static const orangef7 = Color(0xffF7BF66);
 }

@@ -9,6 +9,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
   });
   final String hintText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,9 +20,10 @@ class CustomTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
           focusedBorder: InputBorder.none,
-          contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           hintText: hintText,
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
             color: ColorHelper.black33,
             fontSize: 18.0,
           ),
