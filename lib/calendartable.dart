@@ -27,7 +27,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
         calendarStyle: CalendarStyle(
           outsideDaysVisible: false,
           todayDecoration: BoxDecoration(
-              color: ColorHelper.orangef7,
+              color: ColorHelper.orangeF7,
               borderRadius: BorderRadius.circular(4),
               shape: BoxShape.rectangle),
         ),
