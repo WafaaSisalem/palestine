@@ -6,7 +6,7 @@ class BottomSheetEmail extends StatelessWidget {
   BottomSheetEmail({super.key});
   final Uri emailLaunchUri = Uri(
     scheme: 'mailto',
-    path: 'smith@example.com',
+    path: 'Info@alawdah.eu',
   );
   @override
   Widget build(BuildContext context) {
