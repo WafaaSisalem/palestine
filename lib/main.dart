@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:palestine/bottom_nav.dart';
 import 'package:palestine/calendar.dart';
+import 'package:palestine/notification_page.dart';
+import 'package:palestine/square_event_card.dart';
 
 import 'calendartable.dart';
 import 'email_login_page.dart';
@@ -23,6 +26,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const CalendarPage());
+        home: BottomNavWidget());
   }
 }

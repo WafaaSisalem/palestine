@@ -8,8 +8,12 @@ class EventCardWidget extends StatelessWidget {
   final EventModel event;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [buildLeftBorderWidget(), buildUpperPart()],
+    return SizedBox(
+      height: 81,
+      width: 320,
+      child: Stack(
+        children: [buildBorderLowerPart(), buildUpperPart()],
+      ),
     );
   }
 
@@ -24,15 +28,14 @@ class EventCardWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 10, 13, 10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      buildCardTitleWidget(),
-                      buildDateAndLocationWidget(),
+                      buildTitleWidget(),
+                      buildDateAndLocationWidget()
                     ],
                   ),
                   const Expanded(child: SizedBox()),
@@ -47,10 +50,10 @@ class EventCardWidget extends StatelessWidget {
     );
   }
 
-  Container buildLeftBorderWidget() {
+  Container buildBorderLowerPart() {
     return Container(
-      width: double.infinity,
       height: 81,
+      width: 320,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6), color: ColorHelper.green0C),
     );
@@ -62,6 +65,9 @@ class EventCardWidget extends StatelessWidget {
         Text(
           DateFormat('EEE, d MMM, y').format(event.date),
           style: const TextStyle(fontSize: 10),
+        ),
+        const SizedBox(
+          width: 12,
         ),
         const Icon(
           Icons.location_pin,
@@ -101,7 +107,7 @@ class EventCardWidget extends StatelessWidget {
     );
   }
 
-  buildCardTitleWidget() {
+  buildTitleWidget() {
     return SizedBox(
       width: 200,
       child: Text(

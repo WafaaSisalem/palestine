@@ -17,4 +17,7 @@ class ColorHelper {
   static const greyFC = Color(0xffFCFEFE);
   static const greyF4 = Color(0xFFF4F9F9);
   static const greyF9FB = Color(0xFFF9FBFB);
+  static const greyD9 = Color(0xFFD9D9D9);
+  static const grey82 = Color(0xFF828485);
+  static const greyFB = Color(0xffFBFBFB);
 }
