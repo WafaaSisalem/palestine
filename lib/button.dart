@@ -34,7 +34,7 @@ class CustomElevatedButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Text(
           btnName,
-          style: AppTextStyles.buildKohinoorGujaratiTextStyle(
+          style: AppTextStyles.buildKohinoorTeluguMediumTextStyle(
               color: Colors.white, size: fontsize),
         ),
       ),
