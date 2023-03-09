@@ -224,6 +224,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  pull_down_button:
+    dependency: "direct main"
+    description:
+      name: pull_down_button
+      sha256: "3ecb49e173ac029400a6ad5daec9012aecd235202f09cd5611863d1056059564"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.6.3+1"
   settings_ui:
     dependency: "direct main"
     description:

@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:open_mail_app/open_mail_app.dart';
+import 'package:palestine/settings_menu.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class BottomSheetEmail extends StatelessWidget {
   BottomSheetEmail({super.key});
@@ -57,17 +59,20 @@ class BottomSheetEmail extends StatelessWidget {
                       'https://m.facebook.com/166328110149178/';
 
                   try {
-                    bool launched =
-                        await launch(fbProtocolUrl, forceSafariVC: false);
+                    // bool launched =
+                    //     await launch(fbProtocolUrl, forceSafariVC: false);
+                    bool launched = await launchUrlString(fbProtocolUrl);
 
                     if (!launched) {
-                      await launch(fallbackUrl, forceSafariVC: false);
+                      // await launch(fallbackUrl, forceSafariVC: false);
+                      await launchUrlString(fallbackUrl);
                     }
                   } catch (e) {
-                    await launch(fallbackUrl, forceSafariVC: false);
+                    // await launch(fallbackUrl, forceSafariVC: false);
+                    await launchUrlString(fallbackUrl);
                   }
                 },
-                child: Text('Facebook'))
+                child: Text('Facebook')),
           ],
         )),
       ),
